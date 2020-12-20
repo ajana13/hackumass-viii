@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="col-md-12 order-md-1">
+    <h2 class="mb-3">Patient Information</h2>
+    <form class="needs-validation" action="/predict" method="POST">
+
+        {% for key in stats_dict.keys() %}
+        <hr class="mb-4">
+        <h5 class="mb-3">{{key}}</h5>
+        {% for val in stats_dict[key] %}
+        <div class="custom-control custom-checkbox">
+            <div class="form-group row">
+                <label for="same-address" class="col-sm-6 col-form-label">{{ val }}</label>
+                <div class="col-sm-6">
+                    <input type="number" min="0.01" step="0.01" class="form-control" name={{val}} id={{val}}>
+                    <p class="mb-6"></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        <hr class="mb-6">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Predict Severity of Cancer</button>
+    </form>
+</div>
+
+{% endblock content %}
