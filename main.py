@@ -23,24 +23,12 @@ def pred():
     int_features = [float(x) for x in request.form.values()]
     final_features = np.array([np.array(int_features)])
     prediction = model.predict(final_features)
-    jsonOutput = {
-        "data1":5
-    }
-
-        #output = round(prediction[0], 2)
+    dict = {}
+    for i in range(0, len(stats_dict['Enter the Information'])):
+        dict[stats_dict['Enter the Information'][i]] = int_features[i] 
+        print(stats_dict['Enter the Information'][i])
+    jsonOutput = dict
     return render_template('predict.html', output=jsonOutput, prediction=prediction[0][1]*100)
-    #     data1 = request.form.get("data1")
-    #     jsonOutput = {
-    #         "data1":data1
-    #     }
-    #     # TO DO
-    #     # Need to preprocess the input data in the same manner as the training data
-    #     df = api.json_to_df(jsonOutput)
-    #     # Load the model and then predict
-    #     # model = pickle.load(open("", "rb"))
-    #     result = model.predict_proba(df)
-    #     val = round(float(list(result)[0][0]),2)
-    # return render_template('predict.html', output=jsonOutput, prediction=val)
 
 @app.route("/about")
 def about():
