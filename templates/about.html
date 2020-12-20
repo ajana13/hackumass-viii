@@ -3,7 +3,54 @@
 <h1>About Page</h1>
 <hr class="mb-6">
 
-<h5 class="col-md-12 order-md-1"> Info Here!
-</h5>
+<h5> Background: </h5>
+<p class="col-md-12 order-md-1">
+    Cancer is one of the most common causes of death today, there are more than 100 types of cancers today.
+    An interesting fact about cancer is that if caught early there is a 70% better chance of survival as compared
+    to if caught in later stages. This hack tends to find people with high-risks of cancer early on so that they
+    are able to get the proper treatment necessary and hopefully improve the survivability rate.
+</p>
+
+<h5> What we do: </h5>
+<p class="col-md-12 order-md-1">
+    We devise a method to find the dependence of genes on the risks of cancer. We find the risk and severity
+    of cancer from a small pool of 15 features so that people with higher risk have a better chance for treatment.
+
+    Our project aims to find the key features from a collection of over 300 different features. Using these
+    features as the basis, we are predicting the severity of the case for any human being given the value associated
+    with these genes in the human body.
+</p>
+
+<h5> Challenges: </h5>
+<p class="col-md-12 order-md-1">
+    A major challenge was the data. While many datasets are available to be used for training and testing,
+    a major flaw in all of these datasets is the absence of some data. We had a dataset with over 320 features,
+    there were 6300 empty values. Therefore, filtering out the fields of our interest and also filling in the gaps
+    in the data was a major problem for which we used a variety of methods like removing empty values and using
+    k-nearest neighbor imputations before finally settling on the method of imputing using the mean value.
+</p>
+
+<h5> How we achived our goal: </h5>
+<p class="col-md-12 order-md-1">
+    We developed a Machine Learning model in python to train and predict the likelihood. We first preprocessed
+    the data to make it more useful using different techniques like visual exploration, imputations, etc. We built
+    the project using Python's sklearn library for determining the features (genes) that pose a relevant significance
+    to the severity of cancer. We then trained a neural network from with keras library using 4 layers to engineer the
+    feature and map the features to a probability value signifying the chances of a severe case of cancer.
+
+    We are really proud of the neural network model that we have created. Although a small neural network, it
+    performs remarkably with an average accuracy of about 97%. Additionally, the model showed a 100% precision rate,
+    thus identifying the population with a high risk of cancer correctly, which is a vital part of any such algorithm.
+</p>
+
+<h5> Next Steps: </h5>
+<p class="col-md-12 order-md-1">
+    As next steps, we are optimistic that given training data for more such diseases, we will be able to expand our
+    model to predict the severity in even more diseases enabling the people to get proper treatment at the correct time.
+    We want to expand this project to other diseases and make a portal that can be used in medical
+    organizations/agencies
+    to predict the likelihood of some common and life-threatening diseases globally. We also want to further work on
+    usability by improving the frontend and incorporating a database to store the information entered once.
+</p>
 
 {% endblock content %}
