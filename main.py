@@ -31,7 +31,8 @@ def pred():
         dict[stats_dict['Enter the Information'][i]] = int_features[i] 
     jsonOutput = dict
     # render the prediction as a percentage
-    return render_template('predict.html', output=jsonOutput, prediction=prediction[0][1]*100)
+    out = round(prediction[0][1]*100,5)
+    return render_template('predict.html', output=jsonOutput, prediction=out)
 
 # about page
 @app.route("/about")
